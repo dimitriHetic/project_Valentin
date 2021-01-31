@@ -4,74 +4,84 @@ import { Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {circle} from './components/circle';
 import {cross} from './components/cross';
 import {grid} from './components/grid';
+import {morpion} from './components/morpion';
 
-const Circle = circle
+let Circle = circle
 const Cross = cross
 const Grid = grid
 
-function truc(lautre){
-  lautre.backgroundColor = 'red';
-  console.log("truc");
-}
 
-export default function App() {
+
+export default class App extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {left: 0}
+      }
+  
+  
+  _truc(i){
+    console.log("appuyer"+i)
+    this.setState({left: i*100})
+  }
+render(){
   return (
     <View style={styles.container}>
-      <Circle />
+      <Circle left = {this.state.left} />
       <Cross />
       <Grid/>
       <StatusBar style="auto" />
 
-      <TouchableOpacity style = {styles.bouton1}>
+      <TouchableOpacity style = {styles.bouton1} onPress = {()=>this._truc(1)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton2}>
+      <TouchableOpacity style = {styles.bouton2} onPress = {()=>this._truc(2)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton3}>
+      <TouchableOpacity style = {styles.bouton3} onPress = {()=>this._truc(3)}>
         
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton4}>
+      <TouchableOpacity style = {styles.bouton4} onPress = {()=>this._truc(4)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton5}>
+      <TouchableOpacity style = {styles.bouton5} onPress = {()=>this._truc(5)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton6}>
+      <TouchableOpacity style = {styles.bouton6} onPress = {()=>this._truc(6)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton7}>
+      <TouchableOpacity style = {styles.bouton7} onPress = {()=>this._truc(7)}>
       <Text >
          Button
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton8}>
+      <TouchableOpacity style = {styles.bouton8} onPress = {()=>this._truc(8)}>
       <Text >
          Butto
       </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style = {styles.bouton9}>
+      <TouchableOpacity style = {styles.bouton9} onPress = {()=>this._truc(9)}>
       <Text >
          Button
       </Text>
@@ -80,6 +90,7 @@ export default function App() {
     </View>
     
   );
+}
 }
 
 const styles = StyleSheet.create({
@@ -90,75 +101,75 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   bouton1:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 500,
-    left: 50,
+    bottom: 535,
+    left: 290,
     backgroundColor: 'green',
   },
   bouton2:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 500,
-    left: 110,
+    bottom: 535,
+    left: 550,
     backgroundColor: 'green',
   },
   bouton3:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 500,
-    left: 170,
+    bottom: 535,
+    left: 810,
     backgroundColor: 'green',
   },
   bouton4:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 440,
-    left: 50,
+    bottom: 275,
+    left: 290,
     backgroundColor: 'green',
   },
   bouton5:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 440,
-    left: 110,
+    bottom: 275,
+    left: 550,
     backgroundColor: 'green',
   },
   bouton6:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 440,
-    left: 170,
+    bottom: 275,
+    left: 810,
     backgroundColor: 'green',
   },
   bouton7:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 380,
-    left: 50,
+    bottom: 15,
+    left: 290,
     backgroundColor: 'green',
   },
   bouton8:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 380,
-    left: 110,
+    bottom: 15,
+    left: 550,
     backgroundColor: 'green',
   },
   bouton9:{
-    height: 50,
-    width: 50,
+    height: 250,
+    width: 250,
     position: 'absolute',
-    bottom: 380,
-    left: 170,
+    bottom: 15,
+    left: 810,
     backgroundColor: 'green',
   },
 });
