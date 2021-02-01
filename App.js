@@ -68,7 +68,7 @@ export default class App extends React.Component {
 
     if(i == 1 && this.playArray[0] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {300} bot = {550} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Cross left = {300} bot = {550} color = {this.color}/>})});
     }
     if(i == 2 && this.playArray[1] == null)
     {
