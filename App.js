@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, View, TouchableOpacity, ImageBackground} from 'react-native';
 import {circle} from './components/circle';
 import {cross} from './components/cross';
 import {grid} from './components/grid';
@@ -68,39 +68,39 @@ export default class App extends React.Component {
 
     if(i == 1 && this.playArray[0] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {300} bot = {550} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {300} bot = {550} color = {this.color}/>})});
     }
     if(i == 2 && this.playArray[1] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {560} bot = {550} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {560} bot = {550} color = {this.color}/>})});
     }
     if(i == 3 && this.playArray[2] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {820} bot = {550} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {820} bot = {550} color = {this.color}/>})});
     }
     if(i == 4 && this.playArray[3] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {300} bot = {300} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {300} bot = {300} color = {this.color}/>})});
     }
     if(i == 5 && this.playArray[4] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {560} bot = {300} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {560} bot = {300} color = {this.color}/>})});
     }
     if(i == 6 && this.playArray[5] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {820} bot = {300} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {820} bot = {300} color = {this.color}/>})});
     }
     if(i == 7 && this.playArray[6] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {300} bot = {50} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {300} bot = {50} color = {this.color}/>})});
     }
     if(i == 8 && this.playArray[7] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {560} bot = {50} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {560} bot = {50} color = {this.color}/>})});
     }
     if(i == 9 && this.playArray[8] == null)
     {
-      this.setState({GridArray: this.state.GridArray.concat({key: this.index,form: <Circle left = {820} bot = {50} color = {this.color}/>})});
+      this.setState({GridArray: this.state.GridArray.concat({form: <Circle left = {820} bot = {50} color = {this.color}/>})});
     }
 
     if(this.color == 'red')
@@ -143,68 +143,52 @@ render(){
   })
 
   return (
-    <View style={styles.container}>
-      <Cross />
-      <Grid/>
-      <StatusBar style="auto" />
+    <View style={{flex: 1}}>
+      <View style={{
+        flex:1,
+        backgroundColor: 'skyblue'
+      }}>
+        
+        <StatusBar style="auto" />
+
+      </View>
+      <View style={{flex: 8, alignItems: 'center',justifyContent: 'center'}}>
+        
+        <View style={{width: 800, height: 800}}>
+          
+          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TouchableOpacity style = {styles.bouton1} onPress = {()=>this._truc(1)}/>
+
+            <TouchableOpacity style = {styles.bouton2} onPress = {()=>this._truc(2)}/>
+
+            <TouchableOpacity style = {styles.bouton3} onPress = {()=>this._truc(3)}/>
+          </View>
+          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TouchableOpacity style = {styles.bouton4} onPress = {()=>this._truc(4)}/>
+
+            <TouchableOpacity style = {styles.bouton5} onPress = {()=>this._truc(5)}/>
+
+            <TouchableOpacity style = {styles.bouton6} onPress = {()=>this._truc(6)}/>
+
+          </View>
+          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TouchableOpacity style = {styles.bouton7} onPress = {()=>this._truc(7)}/>
+
+            <TouchableOpacity style = {styles.bouton8} onPress = {()=>this._truc(8)}/>
+
+            <TouchableOpacity style = {styles.bouton9} onPress = {()=>this._truc(9)}/>
+          </View>
+          
+        </View>
 
       {renderList}
 
-      <TouchableOpacity style = {styles.bouton1} onPress = {()=>this._truc(1)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton2} onPress = {()=>this._truc(2)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton3} onPress = {()=>this._truc(3)}>
-        
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton4} onPress = {()=>this._truc(4)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton5} onPress = {()=>this._truc(5)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton6} onPress = {()=>this._truc(6)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton7} onPress = {()=>this._truc(7)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton8} onPress = {()=>this._truc(8)}>
-      <Text >
-         Butto
-      </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style = {styles.bouton9} onPress = {()=>this._truc(9)}>
-      <Text >
-         Button
-      </Text>
-      </TouchableOpacity>
+      </View>
       
+
+      
+      
+
     </View>
     
   );
@@ -213,81 +197,54 @@ render(){
 
 const styles = StyleSheet.create({
   container: {
-   
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: '50',
+    backgroundColor: 'skyblue'
+    
   },
+
   bouton1:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 535,
-    left: 290,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton2:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 535,
-    left: 550,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton3:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 535,
-    left: 810,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton4:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 275,
-    left: 290,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton5:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 275,
-    left: 550,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton6:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 275,
-    left: 810,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton7:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 15,
-    left: 290,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton8:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 15,
-    left: 550,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
   bouton9:{
-    height: 250,
-    width: 250,
-    position: 'absolute',
-    bottom: 15,
-    left: 810,
-    backgroundColor: 'green',
+    height: 200,
+    width: 200,
+    backgroundColor: 'lightcoral',
   },
 });
